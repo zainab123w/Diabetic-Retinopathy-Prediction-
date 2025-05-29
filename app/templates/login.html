@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RetinaScan - Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { background: #f4f7f6; }
+    .navbar {
+      background-color: #064420 !important;
+    }
+    .navbar .nav-link, .navbar-brand {
+      color: white !important;
+    }
+    .form-container {
+      max-width: 420px;
+      margin: 5rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    .btn-theme {
+      background: #064420;
+      color: white;
+      border-radius: 30px;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      width: 100%;
+      border: none;
+    }
+    .btn-theme:hover {
+      background: #087f23;
+      color: white;
+    }
+    .form-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #064420;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+    .flash-message {
+      margin-bottom: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+    }
+    .flash-message-danger {
+      background-color: #f8d7da;
+      color: #842029;
+      border: 1px solid #f5c2c7;
+    }
+    .flash-message-success {
+      background-color: #d1e7dd;
+      color: #0f5132;
+      border: 1px solid #badbcc;
+    }
+    .flash-message-info {
+      background-color: #cff4fc;
+      color: #055160;
+      border: 1px solid #b6effb;
+    }
+    .flash-message-warning {
+      background-color: #fff3cd;
+      color: #664d03;
+      border: 1px solid #ffecb5;
+    }
+    .signup-link {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .signup-link a {
+      color: #064420;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .signup-link a:hover {
+      text-decoration: underline;
+      color: #087f23;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="/">RetinaScan</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">Sign Up</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link active" href="/login">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="form-container">
+    <div class="form-header">Login to Your Account</div>
+
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash-message flash-message-{{ category }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="/login">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          placeholder="Enter your username"
+          required
+          autocomplete="username"
+        />
+      </div>
+      <div class="mb-4">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          required
+          autocomplete="current-password"
+        />
+      </div>
+      <button type="submit" class="btn btn-theme">Login</button>
+    </form>
+
+    <div class="signup-link">
+      Don't have an account? <a href="/signup">Sign up here</a>
+    </div>
+  </div>
+
+</body>
+</html>

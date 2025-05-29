@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RetinaScan - Home</title>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .navbar {
+      background-color: #064420 !important; /* dark green */
+    }
+    .welcome-box {
+      background: #064420; /* dark green */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      border-radius: 8px;
+      padding: 4rem 2rem;
+      margin-top: 1rem;
+      margin-bottom: 3rem;
+      color: white;
+    }
+    .welcome-box h2 {
+      font-weight: 700;
+      color: white;
+    }
+    .welcome-box p {
+      font-size: 1.1rem;
+      color: white;
+    }
+    .welcome-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      object-fit: cover;
+    }
+    .navbar .nav-link, .navbar-brand {
+      color: white !important;
+    }
+    .navbar .nav-link:hover {
+      color: #a0d8af !important; /* subtle hover color */
+    }
+    footer.bg-primary {
+      background-color: #064420 !important; /* dark green footer */
+      color: white;
+    }
+
+    /* Buttons below welcome text */
+    .btn-theme {
+      margin-top: 1.5rem;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      background: hsl(120, 5%, 92%); /* medium green */
+      border: none;
+      color: rgb(4, 105, 29);
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 1rem;
+    }
+    .btn-theme:hover {
+      background: #2e7d32; /* dark green */
+      color: white;
+      text-decoration: none;
+    }
+
+    /* --------- Responsive Fixes --------- */
+
+    /* Make columns stack on small screens */
+    @media (max-width: 767.98px) {
+      .welcome-box {
+        padding: 2rem 1rem;
+      }
+      .welcome-box .row {
+        flex-direction: column;
+      }
+      .welcome-box .col-md-6 {
+        max-width: 100% !important;
+        margin-bottom: 1.5rem;
+      }
+      .btn-theme {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+    }
+
+    /* Navbar toggler icon fix for mobile */
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="/">RetinaScan</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link" href="/signup">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Welcome section with text left and image right -->
+  <div class="container welcome-box">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h2>Welcome to RetinaScan</h2>
+        <p>Empowering healthcare through precise diabetic retinopathy stage prediction.</p>
+        <a href="/login" class="btn-theme">Login</a>
+        <a href="/signup" class="btn-theme">Sign Up</a>
+      </div>
+      <div class="col-md-6 welcome-image">
+        <img 
+          src="https://apollosugar.com/wp-content/uploads/2018/03/shutterstock_387679567.jpg" 
+          alt="Retina Scan" 
+        />
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-primary text-white text-center py-3">
+    <div class="container">
+      <small>&copy; 2025 RetinaScan. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
